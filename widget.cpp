@@ -15,6 +15,11 @@ Widget::~Widget()
     delete ui;
 }
 void Widget::checkAvailable(){
+    ui->pbCoffee->setEnabled(money>=100);
+    ui->pbTea->setEnabled(money>=150);
+    ui->pbGoncha->setEnabled(money>=200);
+    ui->pbrtn->setEnabled(money>0);
+    /*
     bool flag[3] = {true, true, true};
 
     if (money<100)
@@ -26,7 +31,7 @@ void Widget::checkAvailable(){
 
     ui->pbCoffee->setEnabled(flag[0]);
     ui->pbTea->setEnabled(flag[1]);
-    ui->pbGongcha->setEnabled(flag[2]);
+    ui->pbGongcha->setEnabled(flag[2]);*/
 }
 void Widget::changeMoney(int n){
     money += n;
